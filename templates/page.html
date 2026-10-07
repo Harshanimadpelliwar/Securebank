@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h2>{{ title }}</h2><p class="sub">{{ subtitle }}</p>{% if top %}<p>{{ top }}</p>{% endif %}
+{% for sec_title, headers, rows in sections %}{% if sec_title %}<h3>{{ sec_title }}</h3>{% endif %}
+{% if rows %}<div class="scroll"><table><tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr>
+{% for r in rows %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</table></div>
+{% else %}<p>No records.</p>{% endif %}{% endfor %}{% endblock %}

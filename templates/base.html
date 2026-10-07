@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecureBank</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header><h1>SecureBank</h1><p>Banking Management System</p>
+<nav><a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('customers') }}">Customers</a><a href="{{ url_for('accounts') }}">Accounts</a>
+<a href="{{ url_for('transact') }}">Deposit/Withdraw</a><a href="{{ url_for('transfer') }}">Transfer</a><a href="{{ url_for('loans') }}">Loans</a>
+<a href="{{ url_for('analytics') }}">Analytics</a></nav></header>
+<main>{% with msgs = get_flashed_messages(with_categories=true) %}{% for cat, m in msgs %}<div class="flash {{ cat }}">{{ m }}</div>{% endfor %}{% endwith %}
+{% block content %}{% endblock %}</main></body></html>

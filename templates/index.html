@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<div class="cards">{% for label in ["Customers", "Active accounts", "Total deposits", "Approved loans"] %}
+<div class="card"><h3>{{ stats[loop.index0] }}</h3><p>{{ label }}</p></div>{% endfor %}</div>
+<h2>Recent transactions</h2>
+<div class="scroll"><table><tr><th>ID</th><th>Account</th><th>Customer</th><th>Type</th><th>Amount</th><th>Balance After</th><th>Time</th></tr>
+{% for r in rows %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</table></div>
+<p>{{ interest }}</p>{% endblock %}
